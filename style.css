@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Sarala', sans-serif;
+    font-size: 20px;
+    font-size: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.jogo {
+    width: 800px;
+    height: 500px;
+    background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
+    /*background-color: hsla(0, 4%, 84%, 0.412);*/
+    border-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.links {
+    font-size: 16px;
+    background-color: hsla(0, 4%, 84%, 0.1);
+    border: 0;
+    padding: 5px;
+}
+
+button {
+    background-color: hsla(0, 4%, 84%);
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.205);
+    border-radius: 50px;
+    width: 150px;
+    height: 30px;
+}
+
+button a {
+    color: black;
+}
+
+button:hover {
+    border-radius: 50px;
+    background-color: hsla(0, 4%, 84%);
+    transition-duration: 1s;
+}
+
+.corpo {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.foto {
+    width: 350px;
+    height: 350px;
+    background: url(imagens/jogodavelha1.jpg);
+    border-radius: 60px;
+    box-shadow: 5px 5px 10px #1eca91af;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    color: linear-gradient(68.15deg, #2F2325 16.62%, #8E5D52 85.61%);
+}
+
+/* #722D2D
