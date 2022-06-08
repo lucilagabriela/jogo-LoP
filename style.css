@@ -16,6 +16,7 @@ body {
     font-size: 100%;
     display: flex;
     justify-content: center;
+    background-color: #000;
 }
 
 .jogo {
@@ -23,7 +24,7 @@ body {
     height: 500px;
     background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
     /*background-color: hsla(0, 4%, 84%, 0.412);*/
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .navbar {
