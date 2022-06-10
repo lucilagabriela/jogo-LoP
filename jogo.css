@@ -25,3 +25,7 @@ body {
     background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
     border-radius: 20px;
 }
+
+.jogo img {
+    width: 400px;
+}
