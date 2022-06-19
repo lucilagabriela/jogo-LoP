@@ -19,7 +19,7 @@ body {
     background-color: #000;
 }
 
-.instrucoes {
+main {
     width: 800px;
     height: 500px;
     background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
@@ -31,4 +31,10 @@ h1 {
 }
 
 .texto-instrucoes {
+    margin: 40px;
+    margin-top: 35px;
+}
+
+a img {
+    width: 50px;
 }
