@@ -14,6 +14,7 @@ body {
     font-family: 'Sarala', sans-serif;
     font-size: 20px;
     font-size: 100%;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     background-color: #000;
@@ -24,4 +25,18 @@ body {
     height: 500px;
     background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+}
+
+img {
+    width: 200px;
+    margin: 40px;
+    clip-path: circle(45%);
+}
+
+.descricao {
+    margin: 30px;
+    margin-top: 115px;
 }
