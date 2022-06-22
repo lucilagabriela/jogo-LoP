@@ -16,14 +16,16 @@ body {
     font-size: 100%;
     display: flex;
     justify-content: center;
-    background-color: #000;
+    background-color: #262949;
 }
 
 main {
     width: 800px;
     height: 500px;
-    background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
+    background: #232442;
     border-radius: 20px;
+    box-shadow: 10px 30px 20px rgb(0 0 0 / 66%);
+    color: #E7E8EB;
 }
 
 h1 {

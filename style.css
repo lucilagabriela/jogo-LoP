@@ -16,15 +16,16 @@ body {
     font-size: 100%;
     display: flex;
     justify-content: center;
-    background-color: #000;
+    background-color: #262949;
 }
 
 .jogo {
     width: 800px;
     height: 500px;
-    background: linear-gradient(68.15deg, #F4F2F2, #F2F1F1);
+    background: #232442;
     /*background-color: hsla(0, 4%, 84%, 0.412);*/
     border-radius: 20px;
+    box-shadow: 10px 30px 20px rgb(0 0 0 / 66%);
 }
 
 .navbar {
@@ -53,12 +54,12 @@ button {
 }
 
 button a {
-    color: black;
+    color: rgba(255, 255, 255, 0.753);;
 }
 
 button:hover {
     border-radius: 50px;
-    background-color: hsla(0, 4%, 84%);
+    background-color: #000;
     transition-duration: 1s;
 }
 
@@ -72,17 +73,17 @@ button:hover {
 .foto {
     width: 350px;
     height: 350px;
-    background: url(imagens/jogodavelha1.jpg);
+    background: url(imagens/jogo.png);
     border-radius: 60px;
-    box-shadow: 5px 5px 10px #1eca91af;
+    box-shadow: 5px 5px 10px #000;
 }
 
 .texto {
     display: flex;
     flex-direction: column;
     color: linear-gradient(68.15deg, #2F2325 16.62%, #8E5D52 85.61%);
-    margin-top: 130px;
-    color: #512323;
+    margin-top: 100px;
+    color: #E7E8EB;
 }
 
 /* #722D2D
