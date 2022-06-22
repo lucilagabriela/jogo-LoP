@@ -73,7 +73,7 @@ button:hover {
 .foto {
     width: 350px;
     height: 350px;
-    background: url(imagens/jogo.png);
+    background: url(img/jogo.png);
     border-radius: 70px;
     box-shadow: 5px 5px 10px #000;
 }
