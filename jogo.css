@@ -36,14 +36,24 @@ body {
     grid-template-columns: repeat(3, auto);
 }
 
+a img { /* estilização da seta de voltar */
+    width: 50px;
+}
+
+/* estrutura de células do jogo da velha */
 .cell {
     width: 100px;
     height: 100px;
     background: #232442;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.cell.x, .cell.circle {
+    cursor: not-allowed;
 }
 
 .cell:nth-child(1),
@@ -70,14 +80,36 @@ body {
     border-bottom: none;
 }
 
-.jogo img {
-    width: 400px;
-}
-
-a img {
-    width: 50px;
-}
-
+/* mensagem de vitória*/
 .mensagem-vencedor {
     display: none;
+}
+
+/* X */
+.cell.x::before, /* uma "perninha" do X*/
+.cell.x::after /* a outra "perninha" do X */ {
+    content: "";
+    height: calc(100px * 0.15);
+    width: calc(100px * 0.9);
+    background: #fff;
+    position: absolute;
+}
+
+.cell.x::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+/* círculo */
+.cell.circle::before, /* uma "perninha" do X*/
+.cell.circle::after /* a outra "perninha" do X */ {
+    content: "";
+    height: calc(100px * 0.9);
+    width: calc(100px * 0.9);
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
 }
