@@ -36,7 +36,8 @@ body {
     grid-template-columns: repeat(3, auto);
 }
 
-a img { /* estilização da seta de voltar */
+a img {
+    /* estilização da seta de voltar */
     width: 50px;
 }
 
@@ -52,7 +53,8 @@ a img { /* estilização da seta de voltar */
     position: relative;
 }
 
-.cell.x, .cell.circle {
+.cell.x,
+.cell.circle {
     cursor: not-allowed;
 }
 
@@ -115,9 +117,17 @@ a img { /* estilização da seta de voltar */
     font-size: 2rem;
 }
 
+.mostrar-mensagem-vencedor {
+    display: flex;
+}
+
 /* X */
-.cell.x::before, /* uma "perninha" do X*/
-.cell.x::after /* a outra "perninha" do X */ {
+.cell.x::before,
+/* uma "perninha" do X*/
+.cell.x::after
+
+/* a outra "perninha" do X */
+    {
     content: "";
     height: calc(100px * 0.15);
     width: calc(100px * 0.9);
@@ -134,8 +144,12 @@ a img { /* estilização da seta de voltar */
 }
 
 /* círculo */
-.cell.circle::before, /* uma "perninha" do X*/
-.cell.circle::after /* a outra "perninha" do X */ {
+.cell.circle::before,
+/* uma "perninha" do X*/
+.cell.circle::after
+
+/* a outra "perninha" do X */
+    {
     content: "";
     height: calc(100px * 0.9);
     width: calc(100px * 0.9);

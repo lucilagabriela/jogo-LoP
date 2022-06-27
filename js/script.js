@@ -2,6 +2,8 @@
 const elementosCelula = document.querySelectorAll('[data-cell');
 const board = document.querySelector("[data-board]")
 const mensagemTextoVencedor = document.querySelector('[data-mensagem-vencedor-texto')
+const mensagemVencedor = document.querySelector('[data-mensagem-vencedor-texto]')
+const botaoReiniciar = document.querySelector(['data-botao-reiniciar'])
 
 let isCircleTurn;
 
@@ -16,6 +18,17 @@ const combinacaoVitorias = [ //em listas/array
     [2, 4, 6],
 ]
 
+const iniciarJogo = () => {
+    for (const cell of elementosCelula) {
+        cell.addEventListener("click", handleClick, { once: true });
+    }
+
+    isCircleTurn = false
+
+    board.classList.add("x")
+    mensagemVencedor.classList.remove("mostrar-mensagem-vencedor")
+}
+
 const checkParaVencer = (currentPlayer) => {
     return combinacaoVitorias.some(combinacao => { //se algumas das combinacoes estao inteiramente preenchidas
         return combinacao.every(index => {
@@ -29,8 +42,17 @@ const placeMark = (cell, classAdicionar) => {
 }
 
 const fimDeJogo = (empate) => {
+    if (empate) {
+        mensagemVencedorTextElement.innerText = 'Empate!'
+    } else {
+        mensagemVencedorTextElement.innerText = isCircleTurn
+            ? 'Círculo Venceu!'
+            : "X Venceu!"
+    }
 
+    mensagemVencedor.classList.add('mostrar-mensagem-vencedor')
 }
+
 
 const trocaDeSimbolo = () => {
     isCircleTurn = !isCircleTurn //define o inverso do circleturn, ou seja, é falso
@@ -55,14 +77,16 @@ const handleClick = (e) => { // vai checar se é a vez do circulo
     //verificar por vitoria
     const vencedor = checkParaVencer(classAdicionar)
 
+    if (vencedor) {
+        fimDeJogo(false)
+    }
+
     //verificar por empate
 
     //mudar o símbolo
     trocaDeSimbolo() // chamada da funcao
 }
 
-for (const cell of elementosCelula) {
-    cell.addEventListener("click", handleClick, { once: true});
 
-}
 
+botaoReiniciar.addEventListener('click', iniciarJogo)
