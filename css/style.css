@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
 
-* {
+* { /* reset css */
     margin: 0;
     padding: 0;
     outline: 0;
@@ -73,7 +73,7 @@ button:hover {
 .foto {
     width: 350px;
     height: 350px;
-    background: url(/img/jogo.png);
+    background: url(/imagens/jogo.png);
     border-radius: 70px;
     box-shadow: 5px 5px 10px #000;
 }
