@@ -41,47 +41,6 @@ a img {
     width: 50px;
 }
 
-/* estrutura de células do jogo da velha */
-.cell {
-    width: 100px;
-    height: 100px;
-    background: #232442;
-    border: 1px solid #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.cell.x,
-.cell.circle {
-    cursor: not-allowed;
-}
-
-.cell:nth-child(1),
-.cell:nth-child(2),
-.cell:nth-child(3) {
-    border-top: none;
-}
-
-.cell:nth-child(1),
-.cell:nth-child(4),
-.cell:nth-child(7) {
-    border-left: none;
-}
-
-.cell:nth-child(3),
-.cell:nth-child(6),
-.cell:nth-child(9) {
-    border-right: none;
-}
-
-.cell:nth-child(7),
-.cell:nth-child(8),
-.cell:nth-child(9) {
-    border-bottom: none;
-}
-
 /* mensagem de vitória*/
 .mensagem-vencedor {
     display: none;
@@ -121,13 +80,53 @@ a img {
     display: flex;
 }
 
-/* X */
-.cell.x::before,
-/* uma "perninha" do X*/
-.cell.x::after
+/* estrutura de células do jogo da velha */
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #232442;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-/* a outra "perninha" do X */
-    {
+.cell.x,
+.cell.circle {
+    cursor: not-allowed; /* não permitir clicar */
+}
+
+/* tirar bordas indesejáveis */
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+    border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+/* X */
+.cell.x::before, /* uma "perninha" do X*/
+.cell.x::after, /* a outra "perninha" do X */
+.jogo.x .cell:hover::after,
+.jogo.x .cell:hover::before {
     content: "";
     height: calc(100px * 0.15);
     width: calc(100px * 0.9);
@@ -135,21 +134,19 @@ a img {
     position: absolute;
 }
 
-.cell.x::before {
+.cell.x::before,
+.jogo.x .cell:hover::before {
     transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,
+.jogo.x .cell:hover::after {
     transform: rotate(-45deg);
 }
 
 /* círculo */
 .cell.circle::before,
-/* uma "perninha" do X*/
-.cell.circle::after
-
-/* a outra "perninha" do X */
-    {
+.cell.circle::after {
     content: "";
     height: calc(100px * 0.9);
     width: calc(100px * 0.9);
@@ -157,3 +154,4 @@ a img {
     position: absolute;
     border-radius: 50%;
 }
+
