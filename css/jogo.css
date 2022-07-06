@@ -19,7 +19,7 @@ body {
     background-color: #262949;
 }
 
-.jogo {
+.game {
     width: 100vh;
     height: 100vh;
     width: 800px;
@@ -36,13 +36,20 @@ body {
     grid-template-columns: repeat(3, auto);
 }
 
-a img {
+.game.x .cell:not(.x):not(.circle):hover::after,
+.game.x .cell:not(.x):not(.circle):hover::before,
+.game.circle .cell:not(.x):not(.circle):hover::after,
+.game.circle .cell:not(.x):not(.circle):hover::before {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.a img {
     /* estilização da seta de voltar */
     width: 50px;
 }
 
 /* mensagem de vitória*/
-.mensagem-vencedor {
+.winning-message {
     display: none;
     /* para uma div ficar "em cima" do conteudo total da pagina: */
     position: fixed;
@@ -56,7 +63,7 @@ a img {
     flex-direction: column;
 }
 
-.mensagem-vencedor button {
+.winning-message button {
     font-size: 1.5rem;
     background-color: #065B6F;
     padding: 10px 15px;
@@ -66,17 +73,17 @@ a img {
     color: #E7E8EB;
 }
 
-.mensagem-vencedor button:hover {
+.winning-message button:hover {
     background-color: #E7E8EB;
     color: #065B6F;
 }
 
-.mensagem-vencedor p {
+.winning-message p {
     color: #E7E8EB;
     font-size: 2rem;
 }
 
-.mostrar-mensagem-vencedor {
+.show-winning-message {
     display: flex;
 }
 
@@ -97,8 +104,7 @@ a img {
     cursor: not-allowed; /* não permitir clicar */
 }
 
-/* tirar bordas indesejáveis */
-.cell:nth-child(1),
+.cell:nth-child(1), /* tirar bordas indesejáveis */
 .cell:nth-child(2),
 .cell:nth-child(3) {
     border-top: none;
@@ -122,11 +128,11 @@ a img {
     border-bottom: none;
 }
 
-/* X */
+/* criação do X */
 .cell.x::before, /* uma "perninha" do X*/
 .cell.x::after, /* a outra "perninha" do X */
-.jogo.x .cell:hover::after,
-.jogo.x .cell:hover::before {
+.game.x .cell:not(.x):not(.circle):hover::after,
+.game.x .cell:not(.x):not(.circle):hover::before {
     content: "";
     height: calc(100px * 0.15);
     width: calc(100px * 0.9);
@@ -135,18 +141,20 @@ a img {
 }
 
 .cell.x::before,
-.jogo.x .cell:hover::before {
+.game.x .cell:not(.x):not(.circle):hover::before {
     transform: rotate(45deg);
 }
 
 .cell.x::after,
-.jogo.x .cell:hover::after {
+.game.x .cell:not(.x):not(.circle):hover::after {
     transform: rotate(-45deg);
 }
 
-/* círculo */
+/* criação do circle */
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.game.circle .cell:not(.x):not(.circle):hover::after,
+.game.circle .cell:not(.x):not(.circle):hover::before {
     content: "";
     height: calc(100px * 0.9);
     width: calc(100px * 0.9);
@@ -154,4 +162,3 @@ a img {
     position: absolute;
     border-radius: 50%;
 }
-
