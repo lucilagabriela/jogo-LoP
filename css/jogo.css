@@ -162,3 +162,8 @@ body {
     position: absolute;
     border-radius: 50%;
 }
+
+/* tamanho da seta de voltar */
+a img {
+    width: 50px;
+}
