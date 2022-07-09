@@ -3,6 +3,7 @@ const elementsCell = document.querySelectorAll('[data-cell]')
 const game = document.querySelector('[data-game]')
 const winningMessageText =  document.querySelector('[data-winning-message-text]')
 const winningMessage = document.querySelector('[data-winning-message]')
+const restartButton = document.querySelector('[data-restart-button]')
 
 let isCircleTurn // verificar se é a vez do círculo
 
@@ -19,12 +20,18 @@ const winningCombinations = [ //em listas/array
 
 const startGame = () => {
     for (const cell of elementsCell) {
+        cell.classList.remove('circle')
+        cell.classList.remove('x')
+        cell.removeEventListener('click', changeClick)
+
         cell.addEventListener('click', changeClick, { once: true })
     }
 
     isCircleTurn = false
 
     game.classList.add('x')
+
+    winningMessage.classList.remove('show-winning-message')
 }
 
 const endGame = (empate) => { // empate = draw
@@ -50,6 +57,8 @@ const isWinner = (currentPlayer) => {
 const mark = (cell, addClass) => {
     cell.classList.add(addClass)
 }
+
+
 
 const symbolChange = () => {
     isCircleTurn = !isCircleTurn
@@ -88,6 +97,9 @@ for (const cell of elementsCell) {
 }
 
 startGame()
+
+//funcao para o botao reiniciar
+restartButton.addEventListener('click', startGame)
 
 /*
 const mensagemTextoVencedor = document.querySelector('[data-mensagem-vencedor-texto')
